@@ -7,6 +7,7 @@ import java.util.ArrayList;
 @Service
 public class PersonService {
     private ArrayList personList;
+
     public PersonService(ArrayList personList) {
         this.personList = personList;
     }
@@ -15,14 +16,14 @@ public class PersonService {
         return personList;
     }
 
-    public String addPerson(String name){
-        personList.add(name+" eklendi");
-        return name+" eklendi";
+    public String addPerson(String name) {
+        personList.add(name + " eklendi");
+        return name + " eklendi";
     }
 
-    public String removePerson(String name){
-        personList.add(name+" çıkarıldı");
-        return name+" çıkarıldı";
+    public String removePerson(String name) {
+        personList.add(name + " çıkarıldı");
+        return name + " çıkarıldı";
     }
 
 }
