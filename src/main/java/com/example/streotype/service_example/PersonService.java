@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 @Service
 public class PersonService {
-    private ArrayList personList;
+    private ArrayList<String> personList;
 
     public PersonService(ArrayList personList) {
         this.personList = personList;
@@ -25,5 +25,6 @@ public class PersonService {
         personList.add(name + " çıkarıldı");
         return name + " çıkarıldı";
     }
+
 
 }

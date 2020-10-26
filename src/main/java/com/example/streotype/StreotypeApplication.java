@@ -1,6 +1,7 @@
 package com.example.streotype;
 
 import com.example.streotype.controller_example.PersonController;
+import com.example.streotype.repository_example.PersonRepository;
 import com.example.streotype.service_example.PersonService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,15 +14,19 @@ public class StreotypeApplication {
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
         context.scan("com.example.streotype");
         context.refresh();
+
         PersonService personService=context.getBean(PersonService.class);
 
         //PersonService
         System.out.println(personService.addPerson("Ali"));
         System.out.println(personService.removePerson("Veli"));
+        //Controller
         PersonController personController=context.getBean(PersonController.class);
         personController.showPerson();
 
-
+        //Repository
+        PersonRepository personRepository=context.getBean(PersonRepository.class);
+        personRepository.store(personService);
 
     }
 
